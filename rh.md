@@ -44,13 +44,12 @@ $ sudo -H -u concourse /usr/local/bin/concourse web \
 ```
 # Start Worker
 ```
-sudo  /usr/local/bin/concourse web \
-  --basic-auth-username myuser \
-  --basic-auth-password mypass \
-  --session-signing-key /etc/concourse/session_signing_key \
-  --tsa-host-key /etc/concourse/tsa_host_key \
-  --tsa-authorized-keys /etc/concourse/authorized_worker_keys \
-  --external-url http://ec2-54-163-21-180.compute-1.amazonaws.com
+sudo /usr/local/bin/concourse worker \
+  --work-dir /var/lib/concourse \
+  --tsa-host 127.0.0.1 \
+  --tsa-public-key /etc/concourse/tsa_host_key.pub \
+  --tsa-worker-private-key /etc/concourse/worker_key
+  
 ```
 # Misc
 ```
