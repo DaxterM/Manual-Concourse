@@ -1,15 +1,18 @@
 
 # install Postgres 
 ```
-$ sudo yum install postgresql-server.x86_64 postgresql-contrib.x86_64 -y 
-$ sudo service postgresql initdb
-$ sudo service postgresql start
-$ sudo -u postgres createuser concourse
-$ sudo -u postgres createdb --owner=concourse atc
+$ sudo yum install https://yum.postgresql.org/9.6/redhat/rhel-7.3-x86_64/pgdg-redhat96-9.6-3.noarch.rpm
+$ sudo yum install postgresql96-server postgresql96-contrib
+$ sudo /usr/pgsql-9.6/bin/postgresql96-setup initdb
 $ sudo vi /var/lib/pgsql/data/pg_hba.conf
 ADD the two lines below 
 local all all              trust
 host  all all 127.0.0.1/32 trust
+$ sudo service postgresql-9.6 start
+$ sudo -u postgres createuser concourse
+$ sudo -u postgres createdb --owner=concourse atc
+$ sudo systemctl enable postgresql-9.6
+
 ```
 # Install concourse
 ```
@@ -56,16 +59,4 @@ sudo /usr/local/bin/concourse worker \
 disable firewall
 $ sudo systemctl stop firewalld
 
-Use newer postgres
-
-$ sudo yum install https://yum.postgresql.org/9.6/redhat/rhel-7.3-x86_64/pgdg-redhat96-9.6-3.noarch.rpm
-$ sudo yum install postgresql96-server postgresql96-contrib
-$ sudo /usr/pgsql-9.6/bin/postgresql96-setup
-$ sudo vi /var/lib/pgsql/9.6/data/pg_hba.conf
-ADD the two lines below 
-local all all              trust
-host  all all 127.0.0.1/32 trust
-
-$ sudo service postgresql-9.6 start
-$ sudo systemctl enable postgresql-9.6
 ``
