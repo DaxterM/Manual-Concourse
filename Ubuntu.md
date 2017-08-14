@@ -82,11 +82,6 @@ WantedBy=multi-user.target
 $ sudo chown -R concourse:concourse /etc/concourse
 ```
 
-# Enable 8080 and containor networking
-```
-$ sudo ufw allow 8080
-$ sudo ufw default allow routed
-```
 
 # Test
 ```
