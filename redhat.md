@@ -4,7 +4,7 @@
 $ sudo yum install https://yum.postgresql.org/9.6/redhat/rhel-7.3-x86_64/pgdg-redhat96-9.6-3.noarch.rpm
 $ sudo yum install postgresql96-server postgresql96-contrib
 $ sudo /usr/pgsql-9.6/bin/postgresql96-setup initdb
-$ sudo vi /var/lib/pgsql/data/pg_hba.conf
+$ sudo vi  /var/lib/pgsql/9.6/data/pg_hba.conf
 ADD the two lines below 
 local all all              trust
 host  all all 127.0.0.1/32 trust
