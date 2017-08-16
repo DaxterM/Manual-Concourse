@@ -51,7 +51,8 @@ sudo /usr/local/bin/concourse worker \
   --work-dir /var/lib/concourse \
   --tsa-host 127.0.0.1 \
   --tsa-public-key /etc/concourse/tsa_host_key.pub \
-  --tsa-worker-private-key /etc/concourse/worker_key
+  --tsa-worker-private-key /etc/concourse/worker_key \
+  --baggageclaim-driver btrfs
   
 ```
 # Misc
