@@ -1,5 +1,5 @@
 
-# install Postgres 
+# Install Postgres 
 ```
 $ sudo yum install https://yum.postgresql.org/9.6/redhat/rhel-7.3-x86_64/pgdg-redhat96-9.6-3.noarch.rpm
 $ sudo yum install postgresql96-server postgresql96-contrib
